@@ -22,7 +22,6 @@ function onFormSubmit(e) {
     email: email.value,
     message: message.value,
   };
-  console.log(data);
 
   fetch(url, {
     method: "POST",
@@ -34,8 +33,9 @@ function onFormSubmit(e) {
     .then((response) => {
       if (response.ok) {
         resetForm();
-      } else {
         console.log("The data was sent successfully.");
+      } else {
+        alert("Something went wrong");
       }
     })
     .catch((error) => {
